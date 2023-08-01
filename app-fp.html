@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="images/favicon/icon-192x192.png">
 
     <!-- OGP 設定 -->
-    <meta property="og:title" content="Quiz App">
+    <meta property="og:title" content="FP３級クイズ">
     <meta property="og:description" content="クイズアプリ">
     <meta property="og:url" content="https://inpw.jp/app/quizapp">
     <meta property="og:image" content="https://inpw.jp/app/quizapp/images/ogp.png">
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="main.css">
 
     
-    <title>クイズアプリ</title>
+    <title>FP３級クイズ</title>
 </head>
 <body>
     <!-- As a heading -->
@@ -37,7 +37,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-main-green">
         <a class="navbar-brand" href="index.html">
             <img src="images/logo.png" width="30" height="30" class="d-inline-block align-top mr-2" alt="">
-            Quiz App
+            実用資格クイズ2023
         </a>
     </nav>
 
@@ -75,7 +75,7 @@
                 <!-- 選択肢を表示する領域 -->
 
                 <div class="col-md-8 offset-md-2 bg-light p-3">
-                    <p class="font-bold">【次の3つから選んでちょんまげ】</p>
+                    <p class="font-bold">【次の4つから選んでちょんまげ】</p>
                     <ol>
                         <li v-for="answer in questions[currentQuestionNumber].answers" class="my-3">
                             {{answer}}
@@ -201,98 +201,98 @@
 //問題文のデータ
                 questions:{
                     0:{
-                        title: "元金を一定期間、一定の利率で複利運用して目標とする額を得るために、運用開始時点で必要な元金の額を試算する際、目標とする額に乗じる係数は、（   ）である。 ",
+                        title: "投資において、リスクとリターンはどのような関係にあるか？",
                         hint: "",
                         answers: [
-                            "現価係数", "減債基金係数", "資本回収係数"
+                            "リスクが高いほどリターンも高い", "リスクが高いほどリターンも低い", "リスクとリターンは無関係","リスクが低いほどリターンも高い"
                         ],
                         answerNum: 0,
                         description: ""
                     },
 
                     1:{
-                        title: "国民年金の保険料免除期間に係る保険料のうち、追納することができる保険料は、追納に係る厚生労働大臣の承認を受けた日の属する月前（   ）以内の期間に係るものに限られる。",
+                        title: "定期預金の特徴は次のうちどれですか？",
                         hint: "",
                         answers: [
-                            "２年", "５年", "10年"
+                            "高いリターンが期待できる", "いつでもお金を引き出せる", "利息は非課税","一定期間お金を預けることが必要"
                         ],
-                        answerNum: 2,
+                        answerNum: 3,
                         description: ""
                     },
 
                     2:{
-                        title: "65歳到達時に老齢基礎年金の受給資格期間を満たしている者が、67歳６カ月で老齢基礎年金の繰下げ支給の申出をし、30カ月支給を繰り下げた場合、老齢基礎年金の増額率は、（   ）となる。",
+                        title: "「相続税」とは何の税金ですか？",
                         hint: "",
                         answers: [
-                            "12％", "15％", "21％"
+                            "不動産を売却する際の税金", "贈与を受けた際の税金", "遺産を相続する際の税金","資産を運用する際の税金"
                         ],
                         answerNum: 2,
                         description: ""
                     },
 
                     3:{
-                        title: "確定拠出年金の個人型年金の加入者が国民年金の第１号被保険者である場合、原則として、掛金の拠出限度額は年額（   ）である。",
+                        title: "株式投資において、株を保有している期間に支払われる利益のことを何と呼ぶでしょうか？",
                         hint: "",
                         answers: [
-                            "276,000円", "816,000円", "840,000円"
+                            "ディビデンド", "配当金", "キャピタルゲイン","利息"
                         ],
-                        answerNum: 1,
+                        answerNum: 2,
                         description: ""
                     },
 
                     4:{
-                        title: "生命保険契約の契約者は、契約者貸付制度を利用することにより、契約している生命保険の（   ）の一定の範囲内で保険会社から貸付を受けることができる。",
+                        title: "「インフレーション」とは何を意味する言葉でしょうか？",
                         hint: "",
                         answers: [
-                            "既払込保険料総額", "解約返戻金額", "死亡保険金額"
+                            "賃金が上がること", "物価が上がること", "貯蓄が増えること","経済が成長すること"
                         ],
                         answerNum: 1,
                         description: ""
                     },
 
                     5:{
-                        title: "所得税において、個人が2022年中に締結した生命保険契約に基づく支払保険料のうち、（   ）に係る保険料は、介護医療保険料控除の対象となる。",
+                        title: "家計の収入から支出を差し引いた残りの金額を何と呼ぶでしょうか？",
                         hint: "",
                         answers: [
-                            "傷害特約", "定期保険特約", "先進医療特約"
+                            "バランス", "バジェット", "キャッシュフロー","インカム"
                         ],
                         answerNum: 2,
                         description: ""
                     },
                     6:{
-                        title: "損害保険において、契約者が負担する保険料と事故発生の際に支払われる保険金は、それぞれの事故発生リスクの大きさや発生確率に見合ったものでなければならないとする考え方を、（   ）という。",
+                        title: "長期的な貯蓄目標を達成するために、定期的に積立てる投資方法を何と呼ぶでしょうか？",
                         hint: "",
                         answers: [
-                            "大数の法則", "適合性の原則", "給付・反対給付均等の原則（公平の原則）"
+                            "リスク分散投資", "ダイバーシフィケーション", "ドルコスト平均法","ヘッジファンド"
                         ],
                         answerNum: 2,
                         description: ""
                     },
                     7:{
-                        title: "自動車を運行中にハンドル操作を誤ってガードレールに衝突し、被保険者である運転者がケガをした場合、（   ）による補償の対象となる。",
+                        title: "現金を使わずにクレジットカードを利用することによって発生する潜在的なリスクは何ですか？",
                         hint: "",
                         answers: [
-                            "対人賠償保険", "人身傷害補償保険", "自動車損害賠償責任保険"
+                            "個人情報の漏洩", "通貨リスク", "購買力リスク","クレジットリスク"
                         ],
-                        answerNum: 1,
+                        answerNum: 0,
                         description: ""
                     },
                     8:{
-                        title: "投資信託の運用において、企業の成長性が市場平均よりも高いと見込まれる銘柄に投資する手法を、（   ）という。",
+                        title: "年金を受け取るために、一定期間保険料を支払う制度を何と呼ぶでしょうか？",
                         hint: "",
                         answers: [
-                            "パッシブ運用", "バリュー運用", "グロース運用"
+                            "個人年金保険", "国民年金", "年金共済","積立年金"
                         ],
-                        answerNum: 2,
+                        answerNum: 3,
                         description: ""
                     },
                     9:{
-                        title: "株式の投資指標のうち、（   ）は、株価を１株当たり純資産で除して算出される。 ",
+                        title: "「資産配分」とは何を意味する投資用語でしょうか？",
                         hint: "",
                         answers: [
-                            "ＰＥＲ", "ＰＢＲ", "ＲＯＥ"
+                            "新たな資産を得ること", "資産を売却すること", "資産を効果的に分散させること","資産を預けること"
                         ],
-                        answerNum: 1,
+                        answerNum: 2,
                         description: ""
                     }
                 },
