@@ -1,46 +1,34 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <!-- サイトのメタ情報（いじらない） -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- fabicon (Webアイコン) の設定（いじらない） -->
+    <!-- fabicon (Webアイコン) の設定 -->
     <link rel="apple-touch-icon" type="image/png" href="images/favicon/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="images/favicon/icon-192x192.png">
-
-    <!-- OGP 設定（いじらない） -->
-    <meta property="og:title" content="Quiz App">
-    <meta property="og:description" content="クイズアプリ">
-    <meta property="og:url" content="https://inpw.jp/app/quizapp">
-    <meta property="og:image" content="https://inpw.jp/app/quizapp/images/ogp.png">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Quiz App">
-    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="images/favicon/favicon_ricense-quiz.png">
     
-    <!-- Bootstrap の読み込み（いじらない） -->
+    <!-- Bootstrap の読み込み -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
 
-    <!-- CSSの読み込み（いじらない） -->
+    <!-- css の読み込み -->
     <link rel="stylesheet" href="main.css">
-    
-    <!-- サイトのタイトル -->
-    <title>クイズアプリ</title>
 
+    
+    <title>安眠イントラクイズ</title>
 </head>
 <body>
-
-    <!-- ナビゲーションバー -->
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-main-green">
+    <!-- As a heading -->
+ 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
         <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" width="30" height="30" class="d-inline-block align-top mr-2" alt="">
-            Quiz App
+            <img src="images/logo_ricense-quiz.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            資格クイズ2023
         </a>
     </nav>
 
@@ -48,57 +36,57 @@
 
         <div class="container">
 
-            <!-- クイズのタイトルを表示する領域 -->
-
             <div class="row my-3">
 
                 <div class="col-12">
-                    <h1 class="text-center main-title">クイズタイトル</h1>
-                    <p class="text-center">クイズの説明がはいります</p>
+                    <h1 class="text-center main-title">安眠イントラクイズ</h1>
+                    <p class="">次の各問に対する適切な答えを選択肢より選んでちょんまげ。</p>
                 </div>
 
             </div>
 
+            <!-- ここから下に新しく作る -->
+
             <div class="row">
 
-                <!-- 問題数を表示する領域 -->
                 <div class="col-md-8 offset-md-2">
-                  第{{getCurrentQuestionNumber()}}問 / 全{{questionsLength}}問
+                    第{{getCurrentQuestionNumber()}}問 / 全{{questionsLength}}問
                 </div>
 
                 <!-- 問題文を表示する領域 -->
                 <div class="col-md-8 offset-md-2">
                     
-                  <div class="questionBox">
-                      <span class="box-title">問題</span>
-                      <p>{{questions[currentQuestionNumber].title}}</p> 
-                  </div>
-              
-                </div>
+                    <div class="questionBox">
+                        <span class="box-title">問題</span>
+                        <p>{{questions[currentQuestionNumber].title}}</p>
+                    </div>
 
+                </div>
 
                 <!-- 選択肢を表示する領域 -->
+
                 <div class="col-md-8 offset-md-2 bg-light p-3">
-                  <p class="font-bold">【次の3つから選ぼう】</p>
-                  <ol>
-                    <li v-for="answer in questions[currentQuestionNumber].answers" class="my-3">
-                      {{answer}}
-                    </li>
-                  </ol>
+                    <p class="font-bold">【次の4つから選んでちょんまげ】</p>
+                    <ol>
+                        <li v-for="answer in questions[currentQuestionNumber].answers" class="my-3">
+                            {{answer}}
+                        </li>  
+                    </ol>
                 </div>
 
-
                 <!-- 回答ボタンを表示する領域 -->
+
                 <div class="col-md-8 offset-md-2 text-center mt-5">
 
-                  <div class="mb-4">
-                    <a href="#" class="answer-btn answer-btn-bg1 mx-3" @click="answerCheck(0)">1</a>
-                    <a href="#" class="answer-btn answer-btn-bg2 mx-3" @click="answerCheck(1)">2</a>
-                    <a href="#" class="answer-btn answer-btn-bg3 mx-3" @click="answerCheck(2)">3</a>
-                  </div>
-              
-                  <p class="text-center">正解だと思う番号のボタンをクリックしよう</p>
-              
+                    <div class="mb-4">
+                        <a href="#" class="answer-btn answer-btn-bg2 mx-3" @click="answerCheck(0)">１</a>
+                        <a href="#" class="answer-btn answer-btn-bg2 mx-3" @click="answerCheck(1)">２</a>
+                        <a href="#" class="answer-btn answer-btn-bg2 mx-3" @click="answerCheck(2)">３</a>
+                        <a href="#" class="answer-btn answer-btn-bg2 mx-3" @click="answerCheck(3)">４</a>
+                    </div>
+
+                    <p class="text-center">正解だと思う番号をクリックしてちょんまげ</p>
+
                 </div>
 
             </div>
@@ -198,134 +186,163 @@
 
         var app = new Vue({
 
-            el: "#app", //Vueを適用する範囲を定義（今回は <div id="app"></div>の中に適用）
-            data: {     //使いたい変数や配列などを定義する    
+            el: "#app",
+            data: {
 
-                questions:{ //問題文のデータ
+                //使いたい変数や配列などを定義する
+//問題文のデータ
+                questions:{
                     0:{
-                        title: "神奈川県の県庁所在地はどこ？",   //クイズの問題文
-                        hint: "赤レンガ倉庫がある街！",         //ヒント
-                        answers: [                          //答えの選択肢
-                            "横浜市", "横須賀市", "町田市"
+                        title: "睡眠の質を向上させるために重要な要素は次のうちどれでしょうか？",
+                        hint: "",
+                        answers: [
+                            "毎日異なる就寝時間を設定すること", "長時間の昼寝を行うこと", "規則正しい睡眠スケジュールを作ること", "夜更かしをすること"
                         ],
-                        answerNum: 0,                       //正解の問題番号（0から始まる）
-                        description: ""                     //答えたあとに表示する説明など
+                        answerNum: 2,
+                        description: ""
                     },
 
                     1:{
-                        title: "千葉県の県庁所在地はどこ？",
-                        hint: "政令指定都市だよ！",
+                        title: "良い睡眠を促進するための環境整備として適切なものは次のうちどれでしょうか？",
+                        hint: "",
                         answers: [
-                            "柏市", "銚子市", "千葉市"
+                            "部屋を明るい色で飾ること", "エアコンを最低限の温度に設定すること", "静かな場所で睡眠をとること", "色とりどりのライトを点けること"
                         ],
                         answerNum: 2,
                         description: ""
                     },
 
                     2:{
-                        title: "東京都の県庁所在地はどこ？",
-                        hint: "世界で一番多くの人が乗り降りする駅があるよ！",
+                        title: "睡眠の質を悪化させる可能性のある状況は次のうちどれでしょうか？",
+                        hint: "",
                         answers: [
-                            "港区", "新宿区", "六本木"
+                            "適度な運動を行うこと", "ストレスの多い状況に身を置くこと", "非常に暗い場所で寝ること", "緑茶を摂取すること"
                         ],
                         answerNum: 1,
                         description: ""
                     },
 
                     3:{
-                        title: "埼玉県の県庁所在地はどこ？",
-                        hint: "大きなアリーナがある場所だね！",
+                        title: "睡眠不足の影響として予想されるものは次のうちどれでしょうか？",
+                        hint: "",
                         answers: [
-                            "所沢市", "浦和市", "さいたま市"
+                            "集中力の向上", "肥満のリスクの低下", "免疫機能の低下", "肌の健康が向上する"
                         ],
                         answerNum: 2,
                         description: ""
                     },
 
                     4:{
-                        title: "群馬県の県庁所在地はどこ？",
-                        hint: "豚肉の生産量がトップクラス！",
+                        title: "安眠インストラクターが顧客に提供するリラクゼーションの方法として適切なものは次のうちどれでしょうか？",
+                        hint: "",
                         answers: [
-                            "前橋市", "高崎市", "館林市"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-
-                    5:{
-                        title: "茨城県の県庁所在地はどこ？",
-                        hint: "納豆が有名！",
-                        answers: [
-                            "水戸市", "つくば市", "大洗町"
-                        ],
-                        answerNum: 0,
-                        description: ""
-                    },
-
-                    6:{
-                        title: "栃木県の県庁所在地はどこ？",
-                        hint: "ぎょうざが美味しい！",
-                        answers: [
-                            "日光市", "宇都宮市", "那須塩原市"
+                            "高カフェインの飲料を摂取すること", "ヨガや深呼吸を行うこと", "スマートフォンをベッドに持ち込むこと", "ベッドでテレビを観ること"
                         ],
                         answerNum: 1,
                         description: ""
                     },
 
+                    5:{
+                        title: "睡眠の質を向上させるために避けるべき状況は次のうちどれでしょうか？",
+                        hint: "",
+                        answers: [
+                            "食事を就寝前に摂ること", "カフェインを摂取すること", "ベッドでのリラックスを心掛けること", "明るい照明を使用すること"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    6:{
+                        title: "睡眠中に見られる「夢」の役割として適切なものは次のうちどれでしょうか？",
+                        hint: "",
+                        answers: [
+                            "脳の休息を助ける", "心臓の働きを促進する", "身体のリラクゼーションを妨げる", "眼球の運動を制限する"
+                        ],
+                        answerNum: 0,
+                        description: ""
+                    },
+                    7:{
+                        title: "安眠インストラクターが顧客に提供する入眠前の習慣として適切なものは次のうちどれでしょうか？",
+                        hint: "",
+                        answers: [
+                            "高度な論文を読むこと", "バスタブに長時間浸かること", "エクササイズを激しく行うこと", "アイスクリームを大量に食べること"
+                        ],
+                        answerNum: 1,
+                        description: ""
+                    },
+                    8:{
+                        title: "安眠インストラクターが顧客に提供するストレス軽減の方法として適切なものは次のうちどれでしょうか？",
+                        hint: "",
+                        answers: [
+                            "過度のアルコール摂取を勧めること", "マッサージを受けること", "毎晩異なる就寝時間を設定すること", "スマートフォンの画面を長時間見ること"
+                        ],
+                        answerNum: 1,
+                        description: ""
+                    },
+                    9:{
+                        title: "安眠インストラクターが顧客に提供する入眠前のリラクゼーション方法として適切なものは次のうちどれでしょうか？",
+                        hint: "",
+                        answers: [
+                            "コーヒーを飲む", "ヨガを行う", "試験勉強をする", "スマートフォンのゲームをする"
+                        ],
+                        answerNum: 1,
+                        description: ""
+                    }
                 },
+                
 
-                //必要となる変数を定義する
+                //変数
                 currentQuestionNumber: 0,   //現在の問題番号
-                currentQuestionData: [],    //現在の問題データ
-                correctAnswerNum: 0,        //正解した数
-                isCorrect: true,            //正解しているかどうか
-                questionsLength: 0          //出題数を管理する変数
+                currentQuestionData: [], //現在の問題データ
+                correctAnswerNum: 0,//正解した数
+                isCorrect: true,
+                questionsLength: 0
 
 
             },
 
-            mounted() {         //ページが読み込まれたとき最初に呼ばれる関数
+            mounted() {
+
+                // ページが読み込まれたとき最初に呼ばれる関数
 
                 //問題の長さを自動的に設定する
                 this.questionsLength = Object.keys(this.questions).length;
                 
             },
 
-            methods: {      //関数を登録する場所
+            methods: {
 
-                //現在の問題番号（1から始まる）を求める関数
+                // 処理を関数にして記述する
+
                 getCurrentQuestionNumber(){
-                  return this.currentQuestionNumber + 1;                    
+                    return this.currentQuestionNumber + 1;
                 },
 
-                //答えをチェックする関数
+                //答えをチェックする処理
                 answerCheck(userChoiceNumber){
-                  if(userChoiceNumber == this.questions[this.currentQuestionNumber].answerNum){
-                      //正解！
-                      this.isCorrect = true;
-                      this.correctAnswerNum += 1;
-                  }else{
-                      this.isCorrect = false;
-                  }
 
-                  //結果を表示するモーダルを表示する
-                  $('#answerCheckModal').modal({
-                      keyboard: false,
-                      backdrop: "static"
-                  });
-
+                    if(userChoiceNumber == this.questions[this.currentQuestionNumber].answerNum){
+                        //正解！
+                        this.isCorrect = true;
+                        this.correctAnswerNum += 1;
+                    }else{
+                        this.isCorrect = false;
+                    }
+                    
+                    //結果を表示するモーダルを表示する
+                    $('#answerCheckModal').modal({
+                        keyboard: false,
+                        backdrop: "static"
+                    });
                 },
 
-                //次の問題に行く処理（いじらない）
+                // 次の問題に行く処理
                 nextQuestion(){
 
                     if(this.currentQuestionNumber < Object.keys(this.questions).length - 1){
-                        this.currentQuestionNumber += 1;         //最後の問題ではないので問題番号を1ずつ増やす
-                        $('#answerCheckModal').modal('hide');    //モーダルを隠す
-                    }else{
-                        //最後の問題なので問題番号は増やさない
-
-                        $('#answerCheckModal').modal('hide');     //モーダルを隠す   
+                        this.currentQuestionNumber += 1;
+                        $('#answerCheckModal').modal('hide');
+                    }else{3
+                        $('#answerCheckModal').modal('hide');
 
                         //すべての問題が解き終わったので、最終結果モーダルを表示する
                         $('#answerEndedModal').modal({
@@ -335,7 +352,6 @@
                     }                    
                 },
 
-                //画面を再読み込みする関数（いじらない）
                 reload(){
                     location.reload();
                 }
