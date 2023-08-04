@@ -1,4 +1,4 @@
-# Quiz App
+# Ricense Quiz
 * VueJSでつくるクイズアプリ
 
 ## 対応するテキスト
