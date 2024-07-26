@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
         <a class="navbar-brand" href="index.html">
             <img src="images/logo_ricense-quiz.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            資格クイズ2023
+            資格クイズ
         </a>
     </nav>
 
@@ -40,7 +40,7 @@
 
                 <div class="col-12">
                     <h1 class="text-center main-title">FP３級クイズ</h1>
-                    <p class="">次の各文章の（  ）内にあてはまる最も適切な文章、語句、数字を選んでちょんまげ。</p>
+                    <p class="">次の各文章の（  ）内にあてはまる最も適切な文章、語句、数字を選んでください。</p>
                 </div>
 
             </div>
@@ -66,7 +66,7 @@
                 <!-- 選択肢を表示する領域 -->
 
                 <div class="col-md-8 offset-md-2 bg-light p-3">
-                    <p class="font-bold">【次の4つから選んでちょんまげ】</p>
+                    <p class="font-bold">【次の4つから選んでください】</p>
                     <ol>
                         <li v-for="answer in questions[currentQuestionNumber].answers" class="my-3">
                             {{answer}}
@@ -85,7 +85,7 @@
                         <a href="#" class="answer-btn answer-btn-bg2 mx-3" @click="answerCheck(2)">４</a>
                     </div>
 
-                    <p class="text-center">正解だと思う番号をクリックしてちょんまげ</p>
+                    <p class="text-center">正解だと思う番号をクリックしてください</p>
 
                 </div>
 
